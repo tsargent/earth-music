@@ -19,6 +19,17 @@ export default function EarthquakePage() {
     setVisualEvents([]); // clear canvas state
   };
 
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const ua = navigator.userAgent.toLowerCase();
+    const mobile =
+      /iphone|ipad|android|mobile|ipod|blackberry|opera mini|iemobile|wpdesktop/.test(
+        ua
+      );
+    setIsMobile(mobile);
+  }, []);
+
   useEffect(() => {
     async function load() {
       const res = await fetch(
@@ -44,6 +55,13 @@ export default function EarthquakePage() {
 
   return (
     <div className="min-h-screen flex flex-col bg-black text-white">
+      {isMobile && (
+        <div className="absolute top-4 inset-x-0 z-50 flex justify-center">
+          <div className="bg-white/10 backdrop-blur-md text-white text-xs px-4 py-2 rounded-full border border-white/20">
+            Best experienced on a desktop computer
+          </div>
+        </div>
+      )}
       <div className="flex-1 relative">
         <EarthquakeCanvas events={visualEvents} />
 
