@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
-import { useEarthquakeSonifier } from "./hooks/useEarthquakeSonifier";
-import { EarthquakeCanvas, type EarthquakeFeature } from "./EarthquakeCanvas";
+import {
+  useEarthquakeSonifier,
+  type EarthquakeFeature,
+} from "./hooks/useEarthquakeSonifier";
+import { EarthquakeCanvas } from "./EarthquakeCanvas";
 
 export default function EarthquakePage() {
   const [data, setData] = useState<any | null>(null);

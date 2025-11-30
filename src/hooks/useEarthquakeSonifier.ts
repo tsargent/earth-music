@@ -347,7 +347,7 @@ export function useEarthquakeSonifier(
 
     for (const feature of quakes) {
       const { mag, time } = feature.properties;
-      const [lon, lat, depthKm] = feature.geometry.coordinates;
+      const [, lat, depthKm] = feature.geometry.coordinates;
 
       const relMs = time - minTime;
       const t = now + startOffset + relMs / timeScale;
