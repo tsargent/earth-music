@@ -4,6 +4,6 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/earth-music/",
+  base: "/music-for-earthquakes/",
   plugins: [react(), tailwindcss()],
 });
