@@ -19,7 +19,7 @@ export default function EarthquakePage() {
   useEffect(() => {
     async function load() {
       const res = await fetch(
-        "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2025-11-29T20:00:00"
+        "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2025-11-28T20:00:00"
       );
       const json = await res.json();
       setData(json);
